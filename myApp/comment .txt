@@ -1,0 +1,350 @@
+/*const newUser = new User({
+  Name: "aliiiii",
+  Email: "aliiii@admin.com",
+  Password: "1234",
+  Age:21,
+  BornIn: "Cairo",
+  LivesIn:"Cairo",
+  MartialStatus: "Single",
+  PhoneNumber:"011xxxxxx",
+  isAdmin: true});
+  newUser.save().then(
+    data=>{
+    console.log("confirmed");
+  }
+  ).catch(err=>{
+    console.log("err1");
+  })
+  // app.get('/createflight', (req,res) => {
+//   res.sendFile(__dirname + '/views/index.html')
+// })
+
+// app.post("/Addflight", (req, res) => {
+//     var number = Number(req.body.Flight_number);
+//     var dep = req.body.DepartureTime;
+//     var arr = req.body.ArrivalTime;
+//     var ec = Number(req.body.EconomySeats);
+//     var bz = Number(req.body.BusinessSeats);
+//     var airport= req.body.Airport;
+   
+ 
+//    const flight =new Flight({
+//      FlightNumber : number,
+//      DepartureTime : dep,
+//      ArrivalTime : arr ,
+//      EconomySeats: ec,
+//      BusinessSeats: bz,
+//      Airport: airport});
+ 
+//  flight.save().then(
+//    data=>{
+//    res.send("confirmed");
+//  }
+//  ).catch(err=>{
+//    console.log("err");
+//  })
+//    console.log("confirmed");
+//    res.redirect("/");
+//  });
+// app.get('/Showflights', (req,res) => {
+//   Flight.find({})
+//       .then(result => {
+//         res.send(result);
+//       })
+//       .catch(err => {
+//         console.log(err);
+//       });
+// });
+
+// const flight =new Flight({
+//   FlightNumber : "A12312",
+//   DepartureTime : "dep",
+//   To:"DXB",
+//   From:"cai",
+//   ArrivalTime : "arr" ,
+//   First: 222,
+//   EconomySeats: 200,
+//   BusinessSeats: 200,
+//   ArrivalTerminal:"2",
+//   DepartureTerminal:"3"
+// });
+
+// flight.save();
+
+          <p className="left-txt"> <b>Flight Number={u.FlightNumber}</b> </p>
+          <p className="left-txt"> <b>DepartureTime={u.  DepartureTime}</b> </p>
+          <p className="left-txt"> <b>To={u.To}</b> </p>
+          <p className="left-txt"> <b>From={u.From}</b> </p>
+          <p className="left-txt"> <b>ArrivalTime={u.ArrivalTime}</b> </p>
+          <p className="left-txt"> <b>First={u.First}</b> </p>
+          <p className="left-txt"> <b>EconomySeats={u.EconomySeats}</b> </p>
+          <p className="left-txt"> <b>BusinessSeats={u.BusinessSeats}</b> </p>
+          <p className="left-txt"> <b>ArrivalTerminal={u.ArrivalTerminal}</b> </p>
+          <p className="left-txt"> <b>DepartureTerminal={u.DepartureTerminal}</b> </p>
+          .then((res) => {
+        return (
+            <Paper>
+      <Table>
+        <TableHead >
+          <TableRow>
+            <TableCell>FlightNumber</TableCell>
+            <TableCell>DepartureTime</TableCell>
+            <TableCell>To</TableCell>
+            <TableCell>From</TableCell>
+            <TableCell>ArrivalTime</TableCell>
+            <TableCell>EconomySeats</TableCell>
+            <TableCell>BusinessSeats</TableCell>
+            <TableCell>ArrivalTerminal</TableCell>
+            <TableCell>DepartureTerminal</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {res.data.map(row => (
+            <TableRow key={row._id}>
+            <TableCell>{row.FlightNumber}</TableCell>
+            <TableCell>{row.DepartureTime}</TableCell>
+            <TableCell>{row.To}</TableCell>
+            <TableCell>{row.From}</TableCell>
+            <TableCell>{row.ArrivalTime}</TableCell>
+            <TableCell>{row.EconomySeats}</TableCell>
+            <TableCell>{row.BusinessSeats}</TableCell>
+            <TableCell>{row.ArrivalTerminal}</TableCell>
+            <TableCell>{row.DepartureTerminal}</TableCell>
+            <Button variant="contained" id={row._id} type="submit"value='delete' onClick={Handleupdate}> update </Button>
+            <Button variant="contained" id={row._id} type="submit"value='delete' onClick={Handledelete} color="primary"> delete </Button>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </Paper>
+     ) 
+        
+  
+}, (error) => {
+  console.log(error);
+})
+{/* <Dialog
+        open={openD}
+        onClose={handleCloseD}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Reserve flight"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+
+
+<div>
+          <Paper>
+      <Table>
+        <TableHead >
+          <TableRow>
+            <TableCell>FlightNumber</TableCell>
+            <TableCell>DepartureTime</TableCell>
+            <TableCell>To</TableCell>
+            <TableCell>From</TableCell>
+            <TableCell>ArrivalTime</TableCell>
+            <TableCell>First</TableCell>
+            <TableCell>EconomySeats</TableCell>
+            <TableCell>BusinessSeats</TableCell>
+            <TableCell>ArrivalTerminal</TableCell>
+            <TableCell>DepartureTerminal</TableCell>
+            <TableCell>BaggageAllowance</TableCell>
+            <TableCell>Type</TableCell>
+            <TableCell>TicketPrice</TableCell>
+
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          
+        </TableBody>
+      </Table>
+    </Paper>
+     
+        </div>
+
+
+
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>No</Button>
+          <Button id ={props.row._id} onClick={handleClickOpen, handleCloseR} autoFocus>
+            Yes
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+
+
+      
+    <Dialog
+        open={openC}
+        onClose={handleCloseC}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Cancel flight"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Are sure you want to cancel reservation of this flight?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseC}>No</Button>
+          <Button id ={props.row._id} onClick={Handlecreserve} autoFocus>
+            Yes
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+
+      <Button variant="contained" id={props.row._id} type="submit"value='details' 
+      onClick={handleClickOpenD} color="inherit"> Show Details </Button>
+
+      <Button variant="contained" id={props.row._id} type="submit"value='reserve' 
+      onClick={handleClickOpen,handleClickOpenR} color="primary"> Reserve </Button>
+      
+      <Button variant="contained" id={props.row._id} type="submit"value='cancelreserve' onClick={handleClickOpenC} color="secondary"> Cancel reservation </Button>  
+    
+      <Dialog
+        fullScreen
+        open={openR}
+        onClose={handleCloseR}
+        TransitionComponent={Transition}
+      >
+        <AppBar sx={{ position: 'relative' }}>
+          <Toolbar>
+            <IconButton
+              edge="start"
+              color="inherit"
+              onClick={handleCloseR}
+              aria-label="close"
+            >
+
+            </IconButton>
+            <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
+              Reserve Seats
+            </Typography>
+            <Button id = {props.row._id} type = "submit" autoFocus color="inherit" onClick={handleClickOpen}>
+              Save
+            </Button>
+          </Toolbar>
+        </AppBar>
+        <List>
+
+
+          
+          <ListItem button>
+
+
+          <Box sx={{ display: 'flex' }}>
+          <form onSubmit={(event)=> axios.post('http://localhost:8080/flight/Addflight',{
+   
+  ReservedSeats:allseats,
+  
+  
+    }).then(window.open("http://localhost:3000/flight/Showflights"))}>
+    
+    <div className="Reserve Seats">
+    <header className="search-header">
+
+
+    <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+    <FormLabel component="legend">First Class Seats</FormLabel>
+    
+    <FormGroup>
+
+          {fList.map(AvailableFSeats => (
+            <FormControlLabel
+            control={
+              <Checkbox checked={AvailableFFSeats} onChange={handleChange} name={"AvailableFSeats," + AvailableFSeats} />
+              
+            }
+            label={AvailableFSeats}
+          />)
+          )}
+          </FormGroup>
+  </FormControl>
+
+
+  <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+    <FormLabel component="legend">Economic Class Seats</FormLabel>
+    
+    <FormGroup>
+
+          {eList.map(AvailableESeats => (
+            <FormControlLabel
+            control={
+              <Checkbox checked={AvailableEESeats} onChange={handleChange} name={"AvailableESeats," + AvailableESeats} />
+            }
+            label={AvailableESeats}
+          />)
+          )}
+          </FormGroup>
+  </FormControl>
+
+
+  <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+    <FormLabel component="legend">Business Class Seats</FormLabel>
+    
+    <FormGroup>
+
+          {bList.map(AvailableBSeats => (
+            <FormControlLabel
+            control={
+              <Checkbox checked={AvailableBBSeats} onChange={handleChange} name={"AvailableBSeats," + AvailableBSeats} />
+            }
+            label={AvailableBSeats}
+          />)
+          )}
+          </FormGroup>
+  </FormControl>
+
+
+
+
+            
+            
+    </header>
+                  
+     
+        </div>
+       </form>
+
+ 
+</Box>
+
+          </ListItem>
+          <Divider />
+        </List>
+      </Dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ */}
