@@ -10,7 +10,6 @@
     "node": "14.18.1"
   },
   "dependencies": {
-    "node": "14.18.1",
     "axios": "^0.24.0",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
