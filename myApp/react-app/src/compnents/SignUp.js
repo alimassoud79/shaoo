@@ -65,7 +65,7 @@ export default function SignUp() {
    
      }).then(
        
-      window.history.pushState("", "", "http://localhost:3000/SignIn"),
+      window.history.pushState("", "", "http://localhost:8080/SignIn"),
       window.location.reload(),
 )
   .catch((err)=> {

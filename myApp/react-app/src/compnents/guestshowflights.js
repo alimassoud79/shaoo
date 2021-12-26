@@ -313,7 +313,7 @@ function Row(props){
         toast('Redirecting to login to reserve');
 
   await sleep(5000);
- window.location.replace('http://localhost:3000/SignIn');
+ window.location.replace('http://localhost:8080/SignIn');
   };
 
   const handleClickOpenR = () => { //Reserve Seats pop up

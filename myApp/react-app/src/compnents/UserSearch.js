@@ -308,7 +308,7 @@ function Row(props){
     axios.post('http://localhost:8080/user/reserve/' + x,{
       id:s,
     })
-    window.location.replace('http://localhost:3000/user/Showresflights');
+    window.location.replace('http://localhost:8080/user/Showresflights');
     
 
 
@@ -772,7 +772,7 @@ Flight Details            </Typography>
   ReservedSeats:allseats,
   
   
-    }).then(window.open("http://localhost:3000/flight/Showflights"))}>
+    }).then(window.open("http://localhost:38080flight/Showflights"))}>
     
     <div className="Reserve Seats">
     <header className="search-header">
@@ -899,7 +899,7 @@ function Row2(props){
     axios.post('http://localhost:8080/user/reserve/' + x,{
       id:s,
     })
-    window.location.replace('http://localhost:3000/user/Showresflights');
+    window.location.replace('http://localhost:8080/user/Showresflights');
     
 
 
@@ -1345,7 +1345,7 @@ Flight Details            </Typography>
   ReservedSeats:allseats,
   
   
-    }).then(window.open("http://localhost:3000/flight/Showflights"))}>
+    }).then(window.open("http://localhost:38080flight/Showflights"))}>
     
     <div className="Reserve Seats">
     <header className="search-header">
