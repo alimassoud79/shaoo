@@ -27,7 +27,7 @@ function Profile() {
 
  const [userList,setUserList]= useState([]);
  useEffect(()=> {
- axios.get('http://localhost:8080/user/Profile/' + s)
+ axios.get('/user/Profile/' + s)
  .then((res)=>{
 
   setn(res.data.Name);
@@ -60,7 +60,7 @@ const myStyle={
 };
 
   return (
-    <form onSubmit={(event)=> axios.post('http://localhost:8080/user/update/' + s,{
+    <form onSubmit={(event)=> axios.post('/user/update/' + s,{
    
   Name:Name,
   Email:Email ,

@@ -66,7 +66,7 @@ export default function SignIn() {
   
  try {
    
-   let res=  await axios.post("http://localhost:8080/auth/login",JSON.stringify({email: Email, 
+   let res=  await axios.post("/auth/login",JSON.stringify({email: Email, 
    Password: Password}),
    {headers:{"Content-Type":"application/json"}})
 

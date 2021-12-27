@@ -243,7 +243,7 @@
 
 
           <Box sx={{ display: 'flex' }}>
-          <form onSubmit={(event)=> axios.post('http://localhost:8080/flight/Addflight',{
+          <form onSubmit={(event)=> axios.post('/flight/Addflight',{
    
   ReservedSeats:allseats,
   

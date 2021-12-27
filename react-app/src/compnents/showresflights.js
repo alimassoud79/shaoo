@@ -35,7 +35,7 @@ function Showresflights({}) {
   
     var s=String(auth.user._id);
     console.log(s);
-    axios.post('http://localhost:8080/user/cancelreserve/' + s,{
+    axios.post('/user/cancelreserve/' + s,{
       id: event.currentTarget.id
     })
     window.location.reload(false);
@@ -46,7 +46,7 @@ function Showresflights({}) {
     const [userList,setUserList]= useState([]);
     useEffect(()=> {
       var x=String(auth.user._id);
-    axios.get('http://localhost:8080/user/Showresflights/'+x)
+    axios.get('/user/Showresflights/'+x)
     .then((res)=>{
       console.log(res.data);
       setUserList(res.data);
@@ -94,7 +94,7 @@ function Row(props){
   
     var s=String(auth.user._id);
     console.log(s);
-    axios.post('http://localhost:8080/user/cancelreserve/' + s,{
+    axios.post('/user/cancelreserve/' + s,{
       id: event.currentTarget.id
     })
     window.location.reload(false);
@@ -162,7 +162,7 @@ console.log(props.row.Reservedseats.length);
   async function handleToken(token, addresses) {   
   console.log(props.row.Flight._id); 
   var s=String(auth.user._id);
- const response = await axios.post("http://localhost:8080/user/checkout/"+s,{
+ const response = await axios.post("/user/checkout/"+s,{
   
        token,
        product,

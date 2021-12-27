@@ -21,7 +21,7 @@ import Button from '@material-ui/core/Button';
 function Handledelete(event){
   var s=String(event.currentTarget.id);
   console.log(s);
-  const url='http://localhost:8080/flight/delete/' + s
+  const url='/flight/delete/' + s
   axios.post(url)
   window.location.reload(false);
   
@@ -35,7 +35,7 @@ function Search() {
   function Handleupdate(event){
     var s=String(event.currentTarget.id);
     console.log(s);
-    axios.post('http://localhost:8080/flight/update/' + s,{
+    axios.post('/flight/update/' + s,{
      
       FlightNumber : Flight_number,
       DepartureTime : DepartureTime ,
@@ -67,7 +67,7 @@ function Search() {
     }
   const Handleclick=(event)=>{
     event.preventDefault()
-    axios.post('http://localhost:8080/flight/search',{
+    axios.post('/flight/search',{
      
      FlightNumber : Flight_number,
      DepartureTime : DepartureTime ,
@@ -139,7 +139,7 @@ function Search() {
      <form onSubmit={Handleclick}
      //{ (event)=> {
     
-  //      axios.post('http://localhost:8080/flight/search',{
+  //      axios.post('/flight/search',{
    
   //  FlightNumber : Flight_number,
   //  DepartureTime : DepartureTime ,
@@ -261,7 +261,7 @@ function Row(props){
   function Handleupdate(event){
     var s=String(event.currentTarget.id);
     console.log(s);
-    axios.post('http://localhost:8080/flight/update/' + s,{
+    axios.post('/flight/update/' + s,{
      
       FlightNumber : Flight_number,
       DepartureTime : DepartureTime ,

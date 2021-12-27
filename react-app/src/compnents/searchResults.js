@@ -12,7 +12,7 @@ import Paper from "@material-ui/core/Paper";
 function Handledelete(event){
   var s=String(event.currentTarget.id);
   console.log(s);
-  const url='http://localhost:8080/flight/delete/' + s
+  const url='/flight/delete/' + s
   axios.post(url)
   window.location.reload(false);
 }
@@ -24,7 +24,7 @@ function SearchResults({props}) {
   
      const [UserList,setUserList]= useState([props]);
     useEffect(()=> {
-    axios.post('http://localhost:8080/flight/search')
+    axios.post('/flight/search')
     .then((res)=>{
       console.log(res.data);
       setUserList(res.data);
@@ -70,7 +70,7 @@ function Row(props){
   function Handleupdate(event){
     var s=String(event.currentTarget.id);
     console.log(s);
-    axios.post('http://localhost:8080/flight/update/' + s,{
+    axios.post('/flight/update/' + s,{
      
       FlightNumber : Flight_number,
       DepartureTime : DepartureTime ,

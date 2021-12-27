@@ -19,7 +19,7 @@ import { responsiveFontSizes, TextField } from "@material-ui/core";
 function Handledelete(event){
   var s=String(event.currentTarget.id);
   console.log(s);
-  const url='http://localhost:8080/flight/delete/' + s
+  const url='/flight/delete/' + s
   axios.post(url)
   window.location.reload(false);
 }
@@ -31,7 +31,7 @@ function Showflights({}) {
   
     const [userList,setUserList]= useState([]);
     useEffect(()=> {
-    axios.get('http://localhost:8080/flight/Showflights')
+    axios.get('/flight/Showflights')
     .then((res)=>{
       console.log(res.data);
       setUserList(res.data);
@@ -86,7 +86,7 @@ function Row(props){
   function Handleupdate(event){
     var s=String(event.currentTarget.id);
     console.log(s);
-    axios.post('http://localhost:8080/flight/update/' + s,{
+    axios.post('/flight/update/' + s,{
      
       FlightNumber : Flight_number,
       DepartureTime : DepartureTime ,

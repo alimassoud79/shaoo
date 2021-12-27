@@ -35,7 +35,7 @@ function Addflight() {
 
 
   return (
-    <form onSubmit={(event)=> axios.post('http://localhost:8080/flight/Addflight',{
+    <form onSubmit={(event)=> axios.post('/flight/Addflight',{
    
    Flight_number:Flight_number,
 DepartureTime:DepartureTime ,

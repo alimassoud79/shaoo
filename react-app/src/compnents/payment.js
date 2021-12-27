@@ -16,7 +16,7 @@ function Pay() {
     });
 
 async function handleToken(token, addresses) {
-   const response = await axios.post("http://localhost:8080/user/checkout",{
+   const response = await axios.post("/user/checkout",{
         token,
         product
     });

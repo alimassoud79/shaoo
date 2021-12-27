@@ -51,7 +51,7 @@ export default function SignUp() {
  const [errorMessage, setErrorMessage] = useState('');
  const toastId = React.useRef(null);
 
-  const handleSubmit = (event) => axios.post('http://localhost:8080/auth/createuser',{
+  const handleSubmit = (event) => axios.post('/auth/createuser',{
    
    Name:Name,
    Email:Email ,
@@ -65,7 +65,7 @@ export default function SignUp() {
    
      }).then(
        
-      window.history.pushState("", "", "http://localhost:8080/SignIn"),
+      window.history.pushState("", "", "/SignIn"),
       window.location.reload(),
 )
   .catch((err)=> {

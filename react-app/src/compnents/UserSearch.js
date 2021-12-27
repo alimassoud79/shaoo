@@ -50,7 +50,7 @@ function Handlereserve(event){
 
   var s=String(auth.user._id);
   console.log(s);
-  axios.post('http://localhost:8080/user/reserve/' + s,{
+  axios.post('/user/reserve/' + s,{
     id:event.currentTarget.id
   })
   window.location.reload(false);
@@ -62,7 +62,7 @@ const Handlecreserve =(event)=>{
 
   var s=String(auth.user._id);
   console.log(s);
-  axios.post('http://localhost:8080/user/cancelreserve/' + s,{
+  axios.post('/user/cancelreserve/' + s,{
     id:event.currentTarget.id
 
   })
@@ -82,7 +82,7 @@ function UserSearch() {
 
     var s=String(event.currentTarget.id);
    // console.log(s);
-    axios.post('http://localhost:8080/flight/update/' + s,{
+    axios.post('/flight/update/' + s,{
      
       FlightNumber : Flight_number,
       DepartureTime : DepartureTime ,
@@ -121,7 +121,7 @@ function UserSearch() {
   const Handleclick=(event)=>{
 
     event.preventDefault()
-    axios.post('http://localhost:8080/flight/usersearch',{
+    axios.post('/flight/usersearch',{
      
      FlightNumber : Flight_number,
      DepartureTime : DepartureTime ,
@@ -305,15 +305,15 @@ function Row(props){
 
     var x=String(auth.user._id);
     console.log(x);
-    axios.post('http://localhost:8080/user/reserve/' + x,{
+    axios.post('/user/reserve/' + x,{
       id:s,
     })
-    window.location.replace('http://localhost:8080/user/Showresflights');
+    window.location.replace('/user/Showresflights');
     
 
 
 
-  axios.post('http://localhost:8080/user/reserveseats/' + x ,{
+  axios.post('/user/reserveseats/' + x ,{
      
     ReservedSeats: allseats,
     id:s,
@@ -336,7 +336,7 @@ function Row(props){
     setOpenD(true);
     var s = event.currentTarget.id;
     console.log(s)
-    axios.post('http://localhost:8080/flight/details',{_id: event.currentTarget.id}).then((res) => {
+    axios.post('/flight/details',{_id: event.currentTarget.id}).then((res) => {
         setDetailslist(res.data);
       })
     
@@ -378,7 +378,7 @@ function Row(props){
 
     var s=String(event.currentTarget.id);
     //console.log(s);
-    axios.post('http://localhost:8080/flight/update/' + s,{
+    axios.post('/flight/update/' + s,{
      
       FlightNumber : Flight_number,
       DepartureTime : DepartureTime ,
@@ -767,7 +767,7 @@ Flight Details            </Typography>
 
 
           <Box sx={{ display: 'flex' }}>
-          <form onSubmit={(event)=> axios.post('http://localhost:8080/flight/Addflight',{
+          <form onSubmit={(event)=> axios.post('/flight/Addflight',{
    
   ReservedSeats:allseats,
   
@@ -896,15 +896,15 @@ function Row2(props){
 
     var x=String(auth.user._id);
  console.log(x);
-    axios.post('http://localhost:8080/user/reserve/' + x,{
+    axios.post('/user/reserve/' + x,{
       id:s,
     })
-    window.location.replace('http://localhost:8080/user/Showresflights');
+    window.location.replace('/user/Showresflights');
     
 
 
 
-  axios.post('http://localhost:8080/user/reserveseats/' + x ,{
+  axios.post('/user/reserveseats/' + x ,{
      
     ReservedSeats: allseats,
 
@@ -926,7 +926,7 @@ function Row2(props){
     setOpenD(true);
     var s = event.currentTarget.id;
     console.log(s)
-    axios.post('http://localhost:8080/flight/details',{_id: event.currentTarget.id}).then((res) => {
+    axios.post('/flight/details',{_id: event.currentTarget.id}).then((res) => {
         setDetailslist(res.data);
       })
     
@@ -968,7 +968,7 @@ function Row2(props){
 
     var s=String(event.currentTarget.id);
     //console.log(s);
-    axios.post('http://localhost:8080/flight/update/' + s,{
+    axios.post('/flight/update/' + s,{
      
       FlightNumber : Flight_number,
       DepartureTime : DepartureTime ,
@@ -1340,7 +1340,7 @@ Flight Details            </Typography>
 
 
           <Box sx={{ display: 'flex' }}>
-          <form onSubmit={(event)=> axios.post('http://localhost:8080/flight/Addflight',{
+          <form onSubmit={(event)=> axios.post('/flight/Addflight',{
    
   ReservedSeats:allseats,
   
