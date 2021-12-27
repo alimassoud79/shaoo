@@ -41,15 +41,20 @@ app.use(express.json())
 
 const path = require("path")
 
-// ... other app.use middleware 
-app.use(express.static(path.join(__dirname, "react-app", "build")))
+// // ... other app.use middleware 
+// app.use(express.static(path.join(__dirname, "react-app", "build")))
 
-// ...
-// Right before your app.listen(), add this:
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "react-app", "build", "index.html"));
-});
+// // ...
+// // Right before your app.listen(), add this:
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "react-app", "build", "index.html"));
+// });
 
+
+app.use(express.static(path.resolve(process.cwd(), 'react-app/build')))
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(process.cwd(), 'react-app/build/index.html'))
+})
 
 //heroku end
 
